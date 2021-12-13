@@ -3,6 +3,8 @@ import 'package:sunil_wale_admin/screens/db/Brand.dart';
 import 'package:sunil_wale_admin/screens/db/Category.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'add_product.dart';
+
 enum Page { dashboard, manage }
 
 class Admin extends StatefulWidget {
@@ -200,7 +202,10 @@ class _AdminState extends State<Admin> {
             ListTile(
               leading: Icon(Icons.add),
               title: Text("Add Product"),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (_)=> AddProduct()));
+              }
             ),
             Divider(),
             ListTile(

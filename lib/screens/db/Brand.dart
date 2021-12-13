@@ -1,14 +1,13 @@
 import "package:cloud_firestore/cloud_firestore.dart";
 import 'package:uuid/uuid.dart';
-import '../db/Category.dart';
-import '../db/Brand.dart';
+import 'dart:convert';
 
 
 
 
 class BrandService {
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
+  String ref = "Brands";
 
   void createBrand(String name)
   {
@@ -19,4 +18,9 @@ class BrandService {
 
   }
 
+ void getBrands()
+  {
+    Stream<QuerySnapshot> data =  _firestore.collection(ref).snapshots();
+
+  }
 }
